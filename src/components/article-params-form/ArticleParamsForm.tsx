@@ -20,16 +20,13 @@ import styles from './ArticleParamsForm.module.scss';
 import clsx from 'clsx';
 
 type ArticleParamsFormProps = {
-	currentState: ArticleStateType;
 	onApply: (state: ArticleStateType) => void;
 };
 
-export const ArticleParamsForm = ({
-	currentState,
-	onApply,
-}: ArticleParamsFormProps) => {
+export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [formState, setFormState] = useState<ArticleStateType>(currentState);
+	const [formState, setFormState] =
+		useState<ArticleStateType>(defaultArticleState);
 	const sidebarRef = useRef<HTMLElement>(null);
 
 	useOutsideClick(sidebarRef, () => {
