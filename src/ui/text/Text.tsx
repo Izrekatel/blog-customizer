@@ -1,6 +1,6 @@
-import { ElementType, ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
 import { clsx } from 'clsx';
-import { FontFamiliesClasses } from 'src/constants/articleProps';
+import type { FontFamiliesClasses } from 'src/constants/articleProps';
 
 import styles from './index.module.scss';
 

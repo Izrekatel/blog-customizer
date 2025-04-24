@@ -1,8 +1,9 @@
+import type { Dispatch, RefObject, SetStateAction } from 'react';
 import { useEffect } from 'react';
 
 type UseEnterSubmit = {
-	onChange: React.Dispatch<React.SetStateAction<boolean>>;
-	placeholderRef: React.RefObject<HTMLDivElement>;
+	onChange: Dispatch<SetStateAction<boolean>>;
+	placeholderRef: RefObject<HTMLDivElement>;
 };
 
 export const useEnterSubmit = ({
