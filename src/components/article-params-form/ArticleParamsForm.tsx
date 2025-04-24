@@ -3,7 +3,9 @@ import { Button } from 'src/ui/button';
 import { Separator } from 'src/ui/separator';
 import { RadioGroup } from 'src/ui/radio-group';
 import { Select } from 'src/ui/select';
+import type { FormEvent } from 'react';
 import { useState, useRef } from 'react';
+import type { ArticleStateType } from 'src/constants/articleProps';
 import {
 	fontSizeOptions,
 	fontFamilyOptions,
@@ -11,7 +13,6 @@ import {
 	backgroundColors,
 	contentWidthArr,
 	defaultArticleState,
-	ArticleStateType,
 } from 'src/constants/articleProps';
 import { Text } from 'src/ui/text';
 import { useOutsideClick } from 'src/hooks/useOutsideClick';
@@ -50,7 +51,7 @@ export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 		onApply(defaultArticleState);
 	};
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
 		onApply(formState);
 	};
